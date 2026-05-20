@@ -1,29 +1,73 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuários</title>
+    <title>Barco de Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <main class="app-shell">
+        <section class="hero">
+            <div>
+                <span class="eyebrow">Cadastro inteligente</span>
+                <h1>Barco de Dados</h1>
+                <p>Gerencie usuarios com uma interface limpa, rapida e conectada a sua API FastAPI.</p>
+            </div>
 
-    <div class="container">
-        <h1>Cadastro de Usuários</h1>
+            <div class="status-card" aria-live="polite">
+                <span class="status-label">Usuarios cadastrados</span>
+                <strong id="totalUsuarios">0</strong>
+            </div>
+        </section>
 
-        <form id="formUsuario">
-            <input type="text" id="nome" placeholder="Nome" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="senha" placeholder="Senha" required>
+        <section class="workspace">
+            <div class="panel form-panel">
+                <div class="panel-header">
+                    <span class="panel-icon">+</span>
+                    <div>
+                        <h2>Novo usuario</h2>
+                        <p>Preencha os dados para adicionar um cadastro.</p>
+                    </div>
+                </div>
 
-            <button type="submit">Cadastrar</button>
-        </form>
+                <form id="formUsuario" autocomplete="off">
+                    <label for="nome">
+                        Nome
+                        <input type="text" id="nome" name="nome" placeholder="Ex: Ana Souza" required>
+                    </label>
 
-        <h2>Lista de Usuários</h2>
+                    <label for="email">
+                        Email
+                        <input type="email" id="email" name="email" placeholder="ana@email.com" required>
+                    </label>
 
-        <ul id="listaUsuarios"></ul>
-    </div>
+                    <label for="senha">
+                        Senha
+                        <input type="password" id="senha" name="senha" placeholder="Minimo 6 caracteres" minlength="6" required>
+                    </label>
+
+                    <button type="submit" id="submitButton">Cadastrar usuario</button>
+                    <p id="mensagem" class="message" role="status"></p>
+                </form>
+            </div>
+
+            <div class="panel list-panel">
+                <div class="panel-header">
+                    <span class="panel-icon">#</span>
+                    <div>
+                        <h2>Usuarios</h2>
+                        <p>Cadastros salvos no banco de dados.</p>
+                    </div>
+                </div>
+
+                <ul id="listaUsuarios" class="user-list"></ul>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
