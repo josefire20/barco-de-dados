@@ -1,0 +1,4 @@
+USE cadastro_db;
+
+ALTER TABLE usuarios
+ADD COLUMN senha VARCHAR(100) NOT NULL DEFAULT '';
