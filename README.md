@@ -1,4 +1,4 @@
-# Barco de Dados
+# Banco de Dados
 
 Aplicacao simples para cadastrar, listar e remover usuarios usando HTML, CSS, JavaScript, FastAPI e MySQL.
 
